@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-12-10T13:30:36 IST" name="Surefire suite" finished-at="2024-12-10T13:30:59 IST" duration-ms="22912">
+    <groups>
+    </groups>
+    <test started-at="2024-12-10T13:30:36 IST" name="Surefire test" finished-at="2024-12-10T13:30:59 IST" duration-ms="22912">
+      <class name="Runner.TestRunner">
+        <test-method signature="validateLoginType2()[pri:0, instance:Runner.TestRunner@78b1cc93]" started-at="2024-12-10T13:30:36 IST" name="validateLoginType2" finished-at="2024-12-10T13:30:52 IST" duration-ms="15787" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLoginType2 -->
+      </class> <!-- Runner.TestRunner -->
+      <class name="Runner.TestRunnerUsingPageObjectManager">
+        <test-method signature="validateLoginType2()[pri:0, instance:Runner.TestRunnerUsingPageObjectManager@2aa5fe93]" started-at="2024-12-10T13:30:52 IST" name="validateLoginType2" finished-at="2024-12-10T13:30:59 IST" duration-ms="7060" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLoginType2 -->
+      </class> <!-- Runner.TestRunnerUsingPageObjectManager -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
