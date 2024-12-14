@@ -73,15 +73,6 @@ pipeline {
                 archiveArtifacts artifacts: "${TEST_REPORT_DIR}/**", allowEmptyArchive: true
             }
         }
-
-        stage('Notification') {
-            steps {
-                echo 'Sending build notifications...'
-                mail to: 'ganeshdhatsan@gmail.com',
-                     subject: "Cucumber Automation Pipeline - Build ${currentBuild.fullDisplayName}",
-                     body: "The automation tests have completed. Please review the reports and logs."
-            }
-        }
     }
 
     post {
@@ -94,9 +85,6 @@ pipeline {
         }
         failure {
             echo 'Pipeline failed. Sending failure notification...'
-            mail to: 'ganeshdhatsan@gmail.com',
-                 subject: "FAILURE: Cucumber Automation Pipeline - Build ${currentBuild.fullDisplayName}",
-                 body: "The automation tests have failed. Please check Jenkins for details."
-        }
+                   }
     }
 }
