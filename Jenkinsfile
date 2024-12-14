@@ -67,7 +67,7 @@ pipeline {
                 junit '**/target/cucumber-reports/TEST-*.xml'
             }
         }
-
+      
         stage('Archive Artifacts') {
             steps {
                 echo 'Archiving test reports and logs...'
