@@ -40,7 +40,7 @@ pipeline {
                     } else {
                         bat '''
                             java -version || echo "Java is not installed" && exit /b 1
-                            ${MAVEN_CMD} --version || echo "Maven is not installed" && exit /b 1
+                            %MAVEN_CMD% --version || echo "Maven is not installed" && exit /b 1
                         '''
                     }
                 }
@@ -61,7 +61,7 @@ pipeline {
                         """
                     } else {
                         bat """
-                            ${MAVEN_CMD} test ^
+                            %MAVEN_CMD% test ^
                                 -Denv=${params.ENVIRONMENT} ^
                                 -Dregion=${params.REGION} ^
                                 -Dcucumber.filter.tags=${params.TEST_TAG} ^
@@ -79,7 +79,7 @@ pipeline {
                     if (isUnix()) {
                         sh "${MAVEN_CMD} cucumber-report:generate"
                     } else {
-                        bat "${MAVEN_CMD} cucumber-report:generate"
+                        bat "%MAVEN_CMD% cucumber-report:generate"
                     }
                 }
             }
