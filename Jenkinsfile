@@ -25,7 +25,6 @@ pipeline {
             steps {
                 echo 'Checking out code from repository...'
                 git branch: 'Main', url: 'https://github.com/ganeshdhatsan/Jenkins.git'
-                bat '"D:\TESTING SOFTWARES\apache-maven-3.9.9\bin\mvn" --version'
             }
         }
 
@@ -42,6 +41,7 @@ pipeline {
                         bat '''
                             java -version || echo "Java is not installed" && exit /b 1
                             %MAVEN_CMD% --version || echo "Maven is not installed" && exit /b 1
+                            bat '"D:\TESTING SOFTWARES\apache-maven-3.9.9\bin\mvn" --version'
                         '''
                     }
                 }
