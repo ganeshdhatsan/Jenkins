@@ -31,32 +31,57 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 echo 'Setting up environment...'
-                sh '''
-                    java -version || { echo "Java is not installed"; exit 1; }
-                    ${MAVEN_CMD} --version || { echo "Maven is not installed"; exit 1; }
-                '''
+                script {
+                    if (isUnix()) {
+                        sh '''
+                            java -version || { echo "Java is not installed"; exit 1; }
+                            ${MAVEN_CMD} --version || { echo "Maven is not installed"; exit 1; }
+                        '''
+                    } else {
+                        bat '''
+                            java -version || echo "Java is not installed" && exit /b 1
+                            ${MAVEN_CMD} --version || echo "Maven is not installed" && exit /b 1
+                        '''
+                    }
+                }
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo "Running tests for REGION=${params.REGION} and ENVIRONMENT=${params.ENVIRONMENT} with TAG=${params.TEST_TAG}"
-                sh """
-                    ${MAVEN_CMD} test \
-                        -Denv=${params.ENVIRONMENT} \
-                        -Dregion=${params.REGION} \
-                        -Dcucumber.filter.tags=${params.TEST_TAG} \
-                        -Dsurefire.suiteXmlFiles=src//test//resources//TestRunnerTestng.xml
-                """
+                script {
+                    if (isUnix()) {
+                        sh """
+                            ${MAVEN_CMD} test \
+                                -Denv=${params.ENVIRONMENT} \
+                                -Dregion=${params.REGION} \
+                                -Dcucumber.filter.tags=${params.TEST_TAG} \
+                                -Dsurefire.suiteXmlFiles=src//test//resources//TestRunnerTestng.xml
+                        """
+                    } else {
+                        bat """
+                            ${MAVEN_CMD} test ^
+                                -Denv=${params.ENVIRONMENT} ^
+                                -Dregion=${params.REGION} ^
+                                -Dcucumber.filter.tags=${params.TEST_TAG} ^
+                                -Dsurefire.suiteXmlFiles=src\\test\\resources\\TestRunnerTestng.xml
+                        """
+                    }
+                }
             }
         }
 
         stage('Generate Cucumber Report') {
             steps {
                 echo 'Generating Cucumber HTML Reports...'
-                sh """
-                    ${MAVEN_CMD} cucumber-report:generate
-                """
+                script {
+                    if (isUnix()) {
+                        sh "${MAVEN_CMD} cucumber-report:generate"
+                    } else {
+                        bat "${MAVEN_CMD} cucumber-report:generate"
+                    }
+                }
             }
         }
 
@@ -85,6 +110,6 @@ pipeline {
         }
         failure {
             echo 'Pipeline failed. Sending failure notification...'
-                   }
+        }
     }
 }
