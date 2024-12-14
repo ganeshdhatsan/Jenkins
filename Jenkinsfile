@@ -41,7 +41,7 @@ pipeline {
                         bat '''
                             java -version || echo "Java is not installed" && exit /b 1
                             %MAVEN_CMD% --version || echo "Maven is not installed" && exit /b 1
-                            "D:\TESTING SOFTWARES\apache-maven-3.9.9\bin\mvn" --version || echo "Maven is not installed" && exit /b 1
+                            D:\TESTING SOFTWARES\apache-maven-3.9.9\bin\mvn --version || echo "Maven is not installed" && exit /b 1
                         '''
                     }
                 }
