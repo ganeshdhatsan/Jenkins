@@ -47,7 +47,7 @@ pipeline {
                         -Denv=${params.ENVIRONMENT} \
                         -Dregion=${params.REGION} \
                         -Dcucumber.filter.tags=${params.TEST_TAG} \
-                        -Dsurefire.suiteXmlFiles=src\test\resources\TestRunnerTestng.xml
+                        -Dsurefire.suiteXmlFiles=src//test//resources//TestRunnerTestng.xml
                 """
             }
         }
