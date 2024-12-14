@@ -2,15 +2,27 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-10T12:28:23 IST" name="Default suite" finished-at="2024-12-10T12:28:33 IST" duration-ms="9926">
+  <suite started-at="2024-12-14T12:53:37 IST" name="Default suite" finished-at="2024-12-14T12:53:58 IST" duration-ms="21578">
     <groups>
     </groups>
-    <test started-at="2024-12-10T12:28:23 IST" name="Default test" finished-at="2024-12-10T12:28:33 IST" duration-ms="9926">
+    <test started-at="2024-12-14T12:53:37 IST" name="Default test" finished-at="2024-12-14T12:53:58 IST" duration-ms="21578">
       <class name="Runner.TestRunner">
-        <test-method signature="validateLoginType2()[pri:0, instance:Runner.TestRunner@35e2d654]" started-at="2024-12-10T12:28:23 IST" name="validateLoginType2" finished-at="2024-12-10T12:28:33 IST" duration-ms="9834" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Runner.TestRunner@1a677343]" started-at="2024-12-14T12:53:37 IST" name="setUp" finished-at="2024-12-14T12:53:44 IST" duration-ms="6865" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateLoginType2 -->
+        </test-method> <!-- setUp -->
+        <test-method signature="validateLoginwithValidCredentials()[pri:0, instance:Runner.TestRunner@1a677343]" started-at="2024-12-14T12:53:44 IST" name="validateLoginwithValidCredentials" finished-at="2024-12-14T12:53:52 IST" duration-ms="8394" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLoginwithValidCredentials -->
+        <test-method is-config="true" signature="method()[pri:0, instance:Runner.TestRunner@1a677343]" started-at="2024-12-14T12:53:52 IST" name="method" finished-at="2024-12-14T12:53:56 IST" duration-ms="3643" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Runner.TestRunner@1a677343]" started-at="2024-12-14T12:53:56 IST" name="tearDown" finished-at="2024-12-14T12:53:58 IST" duration-ms="2581" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- Runner.TestRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

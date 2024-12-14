@@ -5,18 +5,63 @@
 	<groupId>Ganesh_Jenkins_Automation</groupId>
 	<artifactId>Ganesh_Jenkins_Automation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<SeleniumJava-Version>4.25.0</SeleniumJava-Version>
+		<CucumberJava-Version>7.20.1</CucumberJava-Version>
+		<CucumberTestNG-Version>7.20.1</CucumberTestNG-Version>
+		<CucumberPICOContainer-Version>7.20.1</CucumberPICOContainer-Version>
+		<TestNGPicoContainer-Version>2.15</TestNGPicoContainer-Version>
+		<AppachePOIOOXML-Version>5.2.3 </AppachePOIOOXML-Version>
+		<CommonsIO-Version>2.15.1</CommonsIO-Version>
+		<ExtentReport-Version>5.0.9</ExtentReport-Version> <!-- Define the
+		version
+		property -->
+	</properties>
 	<dependencies>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.20.0</version>
+			<version>${SeleniumJava-Version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.5.1</version>
-			<scope>test</scope>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${CucumberJava-Version}</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>${CucumberTestNG-Version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>${CucumberPICOContainer-Version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.picocontainer</groupId>
+			<artifactId>picocontainer</artifactId>
+			<version>${TestNGPicoContainer-Version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${AppachePOIOOXML-Version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${CommonsIO-Version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${ExtentReport-Version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
 	</dependencies>
 </project>
