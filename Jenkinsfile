@@ -25,6 +25,7 @@ pipeline {
             steps {
                 echo 'Checking out code from repository...'
                 git branch: 'Main', url: 'https://github.com/ganeshdhatsan/Jenkins.git'
+                bat '"D:\TESTING SOFTWARES\apache-maven-3.9.9\bin\mvn" --version'
             }
         }
 
